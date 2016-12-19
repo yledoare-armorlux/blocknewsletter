@@ -317,6 +317,7 @@ class Blocknewsletter extends Module
 		$sql = 'SELECT `email`
 				FROM '._DB_PREFIX_.'newsletter
 				WHERE `email` = \''.pSQL($customer_email).'\'
+				AND active = 1
 				AND id_shop = '.$this->context->shop->id;
 
 		if (Db::getInstance()->getRow($sql))
